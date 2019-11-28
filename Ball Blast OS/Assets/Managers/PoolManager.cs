@@ -23,14 +23,12 @@ public class PoolManager : MonoBehaviour
         {
             currentIndex = 0;
         }
-        Debug.Log(currentIndex + " / " + transform.childCount);
         GameObject obj = transform.GetChild(currentIndex).gameObject;
         return obj;
     }
 
     public void ReturnOne(GameObject obj)
     {
-        //obj.transform.parent = transform;
         obj.SetActive(false);
     }
 }

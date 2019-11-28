@@ -33,8 +33,6 @@ public class Character : MonoBehaviour
         if (GameManager.instance.PLAYING)
         {
             GameManager.instance.GameOver();
-            //GameManager.instance.sceneState = 2;
-            //GameManager.instance.OutputGameState();
         }
     }
 }

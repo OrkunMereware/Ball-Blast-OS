@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
@@ -106,49 +104,5 @@ public class GameManager : MonoBehaviour
         scoreProgressText.SetText(currentScore.ToString());
         startOver = true;
     }
-
-    /*public void OutputGameState()
-    {
-        switch (sceneState)
-        {
-            case 0:
-                sceneState = 1;
-                break;
-            case 1:
-                //sceneStateText.SetText("");
-                break;
-            case 2:
-                sceneStateText.SetText("YOU LOST\nREPLAY");
-                PLAYING = false;
-                break;
-            case 3:
-                //sceneStateText.SetText("REPLAY");
-                break;
-        }
-    }
-
-    public void ProcessSceneStateAfterClick()
-    {
-        switch (sceneState)
-        {
-            case 0:
-                sceneStateText.SetText("PLAY");
-                break;
-            case 1:
-                PLAYING = true;
-                NextLevel();
-                sceneStateText.SetText("");
-                break;
-            case 2:
-                currentLevel = 0;
-                sceneStateText.SetText("");
-                NextLevel();
-                break;
-            case 3:
-                sceneStateText.SetText("REPLAY");
-                break;
-        }
-    }*/
-
 
 }

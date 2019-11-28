@@ -78,7 +78,6 @@ public class BallGenerator : MonoBehaviour
                 split = (int)(hp * Random.Range(0.2f, 0.8f));
                 hpLeft -= (hp + split);
             }
-            //Debug.Log(hp + " -- " + split + "," + split);
             balls[i] = new JSONParser.balls(hp, new int[] {split, split}, 4 * i);
         }
         StartCoroutine(SpawnRoutine(balls));
