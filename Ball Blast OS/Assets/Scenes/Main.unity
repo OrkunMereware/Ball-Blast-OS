@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   framePerSecond: 60
-  currentLevel: 4
+  currentLevel: 0
   furtherLevelMaxHp: 126
   ballGenerator: {fileID: 1820661149}
   character: {fileID: 2103946164}
