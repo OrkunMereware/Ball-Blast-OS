@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-public class JSONParser
+public class LevelProperties
 {
-    public static void Read(ref JSONParser.GameProperties gameProperties, string path)
+    public static void Process(ref LevelProperties.Properties gameProperties, string path)
     {
-        gameProperties = JsonUtility.FromJson<GameProperties>(Resources.Load<TextAsset>(path).text);
+        gameProperties = JsonUtility.FromJson<Properties>(Resources.Load<TextAsset>(path).text);
     }
 
     [Serializable]
-    public class GameProperties
+    public class Properties
     {
         public float gravity;
         public int bullet_count_increase;

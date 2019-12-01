@@ -19,16 +19,17 @@ public class SwipeManager : MonoBehaviour
         {
             SwipeManager.instance.PRESSING = true;
         }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            SwipeManager.instance.PRESSING = false;
+        }
 
         if (SwipeManager.instance.PRESSING && GameManager.instance.PLAYING && Input.GetMouseButton(0))
         {
             SwipeManager.instance.SWIPE_PERCENTAGE = Mathf.Clamp(Calc.map(Input.mousePosition.x, Screen.width * clampPercentage, Screen.width - (Screen.width * clampPercentage), 0.0f, 1.0f), 0.0f, 1.0f);
         }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            SwipeManager.instance.PRESSING = false;
-        }
+        
     }
 
 }

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Settings")]
     [SerializeField] public int currentLevel = 0;
     [SerializeField] public int furtherLevelMaxHp;
-    [System.NonSerialized] public JSONParser.GameProperties gameProperties;
+    [System.NonSerialized] public LevelProperties.Properties gameProperties;
     [System.NonSerialized] public int totalScore, currentScore;
 
     [Header("Element References")]
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        JSONParser.Read(ref gameProperties, "JSON/level");
+        LevelProperties.Process(ref gameProperties, "JSON/level");
         Physics.gravity = Vector3.up * gameProperties.gravity;
         sceneState = 0;
     }

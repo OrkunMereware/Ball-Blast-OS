@@ -10,7 +10,7 @@ public class BallGenerator : MonoBehaviour
     [System.NonSerialized] private Coroutine spawnRoroutine;
 
     // TODO : merge 2 funcs
-    public void Spawn(JSONParser.balls ballProperties)
+    public void Spawn(LevelProperties.balls ballProperties)
     {
         Ball ballClone = MonoBehaviour.Instantiate(ballPrefab);
         ballClone.transform.parent = ballParent;
@@ -30,7 +30,7 @@ public class BallGenerator : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnRoutine(JSONParser.balls[] balls)
+    private IEnumerator SpawnRoutine(LevelProperties.balls[] balls)
     {
         GameManager.instance.currentScore = 0;
         GameManager.instance.totalScore = 0;
@@ -46,7 +46,7 @@ public class BallGenerator : MonoBehaviour
         }
     }
 
-    public void SpawnBalls(JSONParser.balls[] balls)
+    public void SpawnBalls(LevelProperties.balls[] balls)
     {
         if (spawnRoroutine != null)
         {
@@ -59,7 +59,7 @@ public class BallGenerator : MonoBehaviour
     {
         int hpLeft = (int)(totalHP * percentage);
         int ballCount = 4;
-        JSONParser.balls[] balls = new JSONParser.balls[ballCount];
+        LevelProperties.balls[] balls = new LevelProperties.balls[ballCount];
         for (int i = 0; i < ballCount; i++)
         {
             int hp = 0;
@@ -78,7 +78,7 @@ public class BallGenerator : MonoBehaviour
                 split = (int)(hp * Random.Range(0.2f, 0.8f));
                 hpLeft -= (hp + split);
             }
-            balls[i] = new JSONParser.balls(hp, new int[] {split, split}, 4 * i);
+            balls[i] = new LevelProperties.balls(hp, new int[] {split, split}, 4 * i);
         }
         StartCoroutine(SpawnRoutine(balls));
     }
